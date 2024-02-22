@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'app/core/app.dart';
+import 'application/app.dart';
 
 void main() {
-  runApp(const Apdsssp());
+  runApp(const App());
 }
