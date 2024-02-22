@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'dart:developer';
 
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -22,7 +23,7 @@ class AuthController {
     final SharedPreferences sharedPreferences =
         await SharedPreferences.getInstance();
     await sharedPreferences.setString(
-        'user_profile', userProfile.toJson().toString());
+        'user_profile', json.encode(userProfile.toJson()));
     _userProfile = userProfile;
   }
 
@@ -37,8 +38,13 @@ class AuthController {
         await SharedPreferences.getInstance();
     final userProfileString = sharedPreferences.getString('user_profile');
     if (userProfileString != null) {
-      _userProfile = UserProfile.fromJson(
-          Map<String, dynamic>.from(json.decode(userProfileString)));
+      try {
+        _userProfile = UserProfile.fromJson(
+            Map<String, dynamic>.from(json.decode(userProfileString)));
+      } catch (e) {
+        log('Error decoding user profile: $e');
+        // Handle the error or log it for further investigation
+      }
     }
   }
 
@@ -51,6 +57,6 @@ class AuthController {
   }
 
   static bool get isLoggedIn {
-    return _accessToken != null;
+    return _accessToken != null && _userProfile != null;
   }
 }

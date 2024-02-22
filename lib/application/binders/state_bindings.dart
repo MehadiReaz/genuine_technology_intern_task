@@ -5,7 +5,7 @@ import 'package:get/get.dart';
 class StateBindings extends Bindings {
   @override
   void dependencies() {
-    Get.put(() => LoginController());
     Get.put(() => CustomerController());
+    Get.put(() => LoginController());
   }
 }

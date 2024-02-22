@@ -16,6 +16,7 @@ class App extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Customer Management',
       theme: ThemeData(
+        useMaterial3: false,
         //primarySwatch: MaterialColor(0xFF07AEAF, AppColor().color),
         elevatedButtonTheme: ElevatedButtonThemeData(
           style: ElevatedButton.styleFrom(
@@ -47,8 +48,6 @@ class App extends StatelessWidget {
         GetPage(name: '/homescreen', page: () => HomeScreen()),
         GetPage(name: '/login', page: () => LoginScreen()),
         GetPage(name: '/profile', page: () => ProfileScreen()),
-
-        //GetPage(name: '/customerdetails', page: () => CustomerDetailsScreen()),
       ],
     );
   }

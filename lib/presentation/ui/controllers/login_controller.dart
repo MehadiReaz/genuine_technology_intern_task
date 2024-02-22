@@ -24,15 +24,18 @@ class LoginController extends GetxController {
         if (response.statusCode == 200) {
           final userProfile = UserProfile.fromJson(response.data);
           AuthController.setAccessToken(userProfile.token!);
-          await AuthController.setProfile(userProfile); // Set the user profile
+          await AuthController.setProfile(userProfile);
 
-          Get.offAndToNamed('/customerlist');
-          Get.snackbar('Success', 'Logged in successfully');
+          Get.offAndToNamed('/homescreen');
+          Get.snackbar('Success', 'Logged in successfully',
+              backgroundColor: Colors.greenAccent);
         } else {
-          Get.snackbar('Error', 'Failed to log in');
+          Get.snackbar('Error', 'Failed to log in (${response.statusCode})',
+              backgroundColor: Colors.redAccent);
         }
       } catch (e) {
-        Get.snackbar('Error', 'An error occurred');
+        Get.snackbar('Error', 'An error occurred: $e',
+            backgroundColor: Colors.redAccent);
       } finally {
         isLoading.value = false;
       }
