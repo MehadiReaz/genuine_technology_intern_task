@@ -43,7 +43,6 @@ class AuthController {
             Map<String, dynamic>.from(json.decode(userProfileString)));
       } catch (e) {
         log('Error decoding user profile: $e');
-        // Handle the error or log it for further investigation
       }
     }
   }
