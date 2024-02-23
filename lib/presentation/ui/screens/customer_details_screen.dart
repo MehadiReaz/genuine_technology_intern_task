@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import '../../../data/models/customer.dart';
 
 class CustomerDetailsScreen extends StatelessWidget {
@@ -10,7 +11,24 @@ class CustomerDetailsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(customer.name),
+        elevation: 0,
+        automaticallyImplyLeading: false,
+        leading: IconButton(
+            onPressed: () {
+              Get.back();
+            },
+            icon: const Icon(
+              Icons.arrow_back_ios_new,
+              color: Colors.black,
+            )),
+        backgroundColor: Colors.white,
+        centerTitle: true,
+        title: Text(
+          customer.name,
+          style: const TextStyle(
+            color: Colors.black,
+          ),
+        ),
       ),
       body: ListView(children: [
         Padding(
@@ -25,10 +43,10 @@ class CustomerDetailsScreen extends StatelessWidget {
                         'https://www.pqstec.com/InvoiceApps/${customer.imagePath}',
                         errorBuilder: (BuildContext context, Object error,
                             StackTrace? stackTrace) {
-                          return CircleAvatar(
+                          return const CircleAvatar(
                             radius: 60,
                             backgroundColor: Colors.grey,
-                            child: const Icon(
+                            child: Icon(
                               Icons.image,
                               size: 60,
                               color: Colors.white,

@@ -20,6 +20,7 @@ class App extends StatelessWidget {
         //primarySwatch: MaterialColor(0xFF07AEAF, AppColor().color),
         elevatedButtonTheme: ElevatedButtonThemeData(
           style: ElevatedButton.styleFrom(
+            backgroundColor: Colors.grey,
             padding: const EdgeInsets.symmetric(vertical: 12),
             textStyle: const TextStyle(
               fontSize: 16,

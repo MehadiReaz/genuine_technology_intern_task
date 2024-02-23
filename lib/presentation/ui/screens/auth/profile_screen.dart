@@ -12,7 +12,24 @@ class ProfileScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: const Text('Profile'),
+          elevation: 0,
+          automaticallyImplyLeading: false,
+          leading: IconButton(
+              onPressed: () {
+                Get.back();
+              },
+              icon: const Icon(
+                Icons.arrow_back_ios_new,
+                color: Colors.black,
+              )),
+          backgroundColor: Colors.white,
+          centerTitle: true,
+          title: const Text(
+            'Profile',
+            style: TextStyle(
+              color: Colors.black,
+            ),
+          ),
         ),
         body: userProfile != null
             ? Padding(

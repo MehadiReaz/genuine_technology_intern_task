@@ -6,7 +6,12 @@ import 'package:get/get.dart';
 
 class LoginController extends GetxController {
   var isLoading = false.obs;
+  bool obscure = true;
   final formKey = GlobalKey<FormState>();
+  void obscureText() {
+    obscure = !obscure;
+    update();
+  }
 
   void login(String email, String password) async {
     if (formKey.currentState!.validate()) {

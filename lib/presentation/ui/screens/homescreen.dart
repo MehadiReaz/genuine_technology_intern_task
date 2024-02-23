@@ -30,8 +30,12 @@ class HomeScreen extends StatelessWidget {
   AppBar buildAppBar() {
     return AppBar(
       automaticallyImplyLeading: false,
+      backgroundColor: Colors.white,
       centerTitle: true,
-      title: const Text('Customer List'),
+      title: const Text(
+        'Customer List',
+        style: TextStyle(color: Colors.black),
+      ),
       actions: [
         buildToggleViewButton(),
         buildPopupMenuButton(),
@@ -42,8 +46,8 @@ class HomeScreen extends StatelessWidget {
   Widget buildToggleViewButton() {
     return IconButton(
       icon: Obx(() => customerController.isGridView.value
-          ? const Icon(Icons.list)
-          : const Icon(Icons.grid_on)),
+          ? const Icon(Icons.list, color: Colors.black)
+          : const Icon(Icons.grid_on, color: Colors.black)),
       onPressed: () {
         customerController.toggleViewMode();
       },
@@ -52,6 +56,7 @@ class HomeScreen extends StatelessWidget {
 
   PopupMenuButton<String> buildPopupMenuButton() {
     return PopupMenuButton<String>(
+      iconColor: Colors.black,
       onSelected: (value) {
         handlePopupMenuSelection(value);
       },
