@@ -21,6 +21,8 @@ class ListViewTile extends StatelessWidget {
         leading: buildCustomerImage(),
         title: Text(
           customer.name,
+          maxLines: 1,
+          overflow: TextOverflow.ellipsis,
           style: const TextStyle(
             fontSize: 16,
             fontWeight: FontWeight.bold,
@@ -28,6 +30,8 @@ class ListViewTile extends StatelessWidget {
         ),
         subtitle: Text(
           'Phone: ${customer.phone ?? 'N/A'}',
+          maxLines: 1,
+          overflow: TextOverflow.ellipsis,
           style: const TextStyle(
             fontSize: 14,
             color: Colors.grey,
