@@ -21,6 +21,15 @@ class HomeScreen extends StatelessWidget {
         centerTitle: true,
         title: const Text('Customer List'),
         actions: [
+          IconButton(
+            icon: Obx(() => customerController.isGridView.value
+                ? Icon(Icons.list)
+                : Icon(Icons.grid_on)),
+            onPressed: () {
+              // Toggle between ListView and GridView
+              customerController.toggleViewMode();
+            },
+          ),
           PopupMenuButton<String>(
             onSelected: (value) {
               if (value == 'Profile') {
@@ -51,76 +60,127 @@ class HomeScreen extends StatelessWidget {
       ),
       body: Padding(
         padding: const EdgeInsets.all(8.0),
-        child: PagedGridView<int, Customer>(
-          pagingController: customerController.pagingController,
-          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-            crossAxisCount: 2,
-            crossAxisSpacing: 8.0,
-            mainAxisSpacing: 8.0,
-          ),
-          builderDelegate: PagedChildBuilderDelegate<Customer>(
-            itemBuilder: (context, customer, index) {
-              return GestureDetector(
-                onTap: () {
-                  Get.to(() => CustomerDetailsScreen(customer: customer));
-                },
-                child: Container(
-                  margin: const EdgeInsets.symmetric(
-                    vertical: 5,
-                    horizontal: 5,
-                  ),
-                  padding: const EdgeInsets.symmetric(
-                    vertical: 5,
-                  ),
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(10),
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.grey.shade600,
-                        spreadRadius: 1,
-                        blurRadius: 5,
-                        offset: const Offset(0, 5),
-                      ),
-                      BoxShadow(
-                        color: Colors.grey.shade300,
-                        offset: const Offset(-5, 0),
-                      ),
-                    ],
-                  ),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      if (customer.imagePath != null)
-                        Image.network(
-                          'https://www.pqstec.com/InvoiceApps/${customer.imagePath}',
-                          height: 130,
-                          width: double.infinity,
-                          fit: BoxFit.cover,
-                        )
-                      else
-                        const Center(
-                          child: Icon(
-                            Icons.image,
-                            size: 130,
-                          ),
-                        ),
-                      Text(
-                        customer.name,
-                        softWrap: false,
-                        overflow: TextOverflow.ellipsis,
-                      ),
-                      Text(
-                        'Phone: ${customer.phone ?? 'No Phone Available'}',
-                        softWrap: false,
-                        overflow: TextOverflow.ellipsis,
-                      ),
-                    ],
-                  ),
+        child: Obx(() => customerController.isGridView.value
+            ? PagedGridView<int, Customer>(
+                pagingController: customerController.pagingController,
+                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: 2,
+                  crossAxisSpacing: 8.0,
+                  mainAxisSpacing: 8.0,
                 ),
-              );
-            },
-          ),
-        ),
+                builderDelegate: PagedChildBuilderDelegate<Customer>(
+                  itemBuilder: (context, customer, index) {
+                    return GestureDetector(
+                      onTap: () {
+                        Get.to(() => CustomerDetailsScreen(customer: customer));
+                      },
+                      child: Container(
+                        margin: const EdgeInsets.symmetric(
+                          vertical: 5,
+                          horizontal: 5,
+                        ),
+                        padding: const EdgeInsets.symmetric(
+                          vertical: 5,
+                        ),
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(10),
+                          boxShadow: [
+                            BoxShadow(
+                              color: Colors.grey.shade300,
+                              spreadRadius: 1,
+                              blurRadius: 3,
+                              offset: const Offset(0, 12),
+                            ),
+                            BoxShadow(
+                              color: Colors.grey.shade100,
+                              offset: const Offset(-12, 0),
+                            ),
+                          ],
+                        ),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            customer.imagePath != null
+                                ? Center(
+                                    child: Image.network(
+                                      'https://www.pqstec.com/InvoiceApps/${customer.imagePath}',
+                                      height: 130,
+                                      width: double.infinity,
+                                      fit: BoxFit.cover,
+                                      errorBuilder:
+                                          (context, error, stackTrace) {
+                                        // This widget will be displayed when the image fails to load
+                                        return const Center(
+                                          child: Icon(
+                                            Icons.image,
+                                            size: 130,
+                                          ),
+                                        );
+                                      },
+                                    ),
+                                  )
+                                : const Center(
+                                    child: Icon(
+                                      Icons.image,
+                                      size: 130,
+                                    ),
+                                  ),
+                            Text(
+                              customer.name,
+                              softWrap: false,
+                              overflow: TextOverflow.ellipsis,
+                              style: const TextStyle(
+                                fontSize: 18,
+                                fontWeight: FontWeight.w600,
+                              ),
+                            ),
+                            const SizedBox(
+                              height: 5,
+                            ),
+                            Text(
+                              'Phone: ${customer.phone ?? 'No Phone Available'}',
+                              softWrap: false,
+                              overflow: TextOverflow.ellipsis,
+                            ),
+                          ],
+                        ),
+                      ),
+                    );
+                  },
+                ),
+              )
+            : PagedListView<int, Customer>(
+                pagingController: customerController.pagingController,
+                builderDelegate: PagedChildBuilderDelegate<Customer>(
+                  itemBuilder: (context, customer, index) {
+                    return ListTile(
+                      onTap: () {
+                        Get.to(() => CustomerDetailsScreen(customer: customer));
+                      },
+                      leading: customer.imagePath != null
+                          ? Image.network(
+                              'https://www.pqstec.com/InvoiceApps/${customer.imagePath}',
+                              height: 50,
+                              width: 50,
+                              fit: BoxFit.cover,
+                              errorBuilder: (context, error, stackTrace) {
+                                // This widget will be displayed when the image fails to load
+                                return const Icon(
+                                  Icons.image,
+                                  size: 50,
+                                );
+                              },
+                            )
+                          : const Icon(
+                              Icons.image,
+                              size: 50,
+                            ),
+                      title: Text(customer.name),
+                      subtitle: Text('Phone: ${customer.phone ?? 'N/A'}'),
+                    );
+                  },
+                ),
+              )),
       ),
     );
   }

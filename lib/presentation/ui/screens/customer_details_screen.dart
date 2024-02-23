@@ -10,51 +10,72 @@ class CustomerDetailsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Customer Details'),
+        title: Text(customer.name),
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            CircleAvatar(
-              radius: 60,
-              backgroundImage: customer.imagePath != null
-                  ? NetworkImage(
-                      'https://www.pqstec.com/InvoiceApps/${customer.imagePath}')
-                  : null,
-              child: customer.imagePath == null
-                  ? const Icon(
-                      Icons.image,
-                      size: 60,
-                    )
-                  : null,
-            ),
-            const SizedBox(height: 20),
-            TextField(
-              decoration: const InputDecoration(
-                labelText: 'Name',
+      body: ListView(children: [
+        Padding(
+          padding: const EdgeInsets.all(16.0),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              CircleAvatar(
+                radius: 60,
+                backgroundImage: customer.imagePath != null
+                    ? Image.network(
+                        'https://www.pqstec.com/InvoiceApps/${customer.imagePath}',
+                        errorBuilder: (BuildContext context, Object error,
+                            StackTrace? stackTrace) {
+                          return CircleAvatar(
+                            radius: 60,
+                            backgroundColor: Colors.grey,
+                            child: const Icon(
+                              Icons.image,
+                              size: 60,
+                              color: Colors.white,
+                            ),
+                          );
+                        },
+                      ).image
+                    : null,
+                child: customer.imagePath == null
+                    ? const Icon(
+                        Icons.image,
+                        size: 60,
+                      )
+                    : null,
               ),
-              controller: TextEditingController(text: customer.name),
-              readOnly: true,
-            ),
-            TextField(
-              decoration: const InputDecoration(
-                labelText: 'Email',
-              ),
-              controller: TextEditingController(text: customer.email),
-              readOnly: true,
-            ),
-            TextField(
-              decoration: const InputDecoration(
-                labelText: 'Phone',
-              ),
-              controller: TextEditingController(text: customer.phone),
-              readOnly: true,
-            ),
-            // Add other fields as needed
-          ],
+              const SizedBox(height: 20),
+              textField('Name', customer.name),
+              textField('Email', customer.email),
+              textField('Phone', customer.phone),
+              textField('Type', customer.custType),
+              textField('Last Invoice No', customer.lastInvoiceNo),
+              textField('Last Sales Date', customer.lastSalesDate),
+              textField('Last Sold Product', customer.lastSoldProduct),
+              textField('Last Transaction Date', customer.lastTransactionDate),
+              textField('Primary Address', customer.primaryAddress),
+              textField('Secondary Address', customer.secondaryAddress),
+              textField('Total Amount Back',
+                  '${customer.totalAmountBack.toDouble()}'),
+              textField(
+                  'Total Collection', '${customer.totalCollection.toDouble()}'),
+              textField('Total Due', '${customer.totalDue.toDouble()}'),
+            ],
+          ),
         ),
+      ]),
+    );
+  }
+
+  Padding textField(String labelText, controllerText) {
+    return Padding(
+      padding: const EdgeInsets.all(16),
+      child: TextField(
+        decoration: InputDecoration(
+          labelText: labelText,
+        ),
+        controller: TextEditingController(text: controllerText),
+        readOnly: true,
       ),
     );
   }

@@ -8,6 +8,10 @@ import 'auth_controller.dart';
 
 class CustomerController extends GetxController {
   late PagingController<int, Customer> pagingController;
+  RxBool isGridView = true.obs;
+  void toggleViewMode() {
+    isGridView.value = !isGridView.value;
+  }
 
   @override
   void onInit() {
