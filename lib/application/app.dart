@@ -1,14 +1,14 @@
 import 'package:device_preview/device_preview.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:future_it_task/application/binders/state_bindings.dart';
-import 'package:future_it_task/presentation/ui/screens/homescreen.dart';
 import 'package:get/get.dart';
 import 'package:sizer/sizer.dart';
 
 import '../presentation/ui/screens/auth/login_screen.dart';
 import '../presentation/ui/screens/auth/profile_screen.dart';
+import '../presentation/ui/screens/homescreen.dart';
 import '../presentation/ui/screens/splash_screen.dart';
+import 'binders/state_bindings.dart';
 
 class App extends StatelessWidget {
   const App({super.key});

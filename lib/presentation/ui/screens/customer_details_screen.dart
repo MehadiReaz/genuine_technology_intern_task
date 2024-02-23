@@ -41,6 +41,7 @@ class CustomerDetailsScreen extends StatelessWidget {
                 backgroundImage: customer.imagePath != null
                     ? Image.network(
                         'https://www.pqstec.com/InvoiceApps/${customer.imagePath}',
+                        fit: BoxFit.cover,
                         errorBuilder: (BuildContext context, Object error,
                             StackTrace? stackTrace) {
                           return const CircleAvatar(

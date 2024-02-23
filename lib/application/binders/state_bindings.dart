@@ -1,6 +1,7 @@
-import 'package:future_it_task/presentation/ui/controllers/customer_controller.dart';
-import 'package:future_it_task/presentation/ui/controllers/login_controller.dart';
 import 'package:get/get.dart';
+
+import '../../presentation/ui/controllers/customer_controller.dart';
+import '../../presentation/ui/controllers/login_controller.dart';
 
 class StateBindings extends Bindings {
   @override

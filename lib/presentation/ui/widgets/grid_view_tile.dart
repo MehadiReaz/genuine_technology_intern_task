@@ -40,14 +40,15 @@ class GridViewTile extends StatelessWidget {
           ],
         ),
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Expanded(
+            SizedBox(
+              height: 10.h,
               child: buildCustomerImage(context),
             ),
-            SizedBox(height: 6.h),
-            Expanded(
+            const Spacer(),
+            SizedBox(
+              height: 8.h,
               child: buildCustomerDetails(),
             ),
           ],
@@ -61,12 +62,12 @@ class GridViewTile extends StatelessWidget {
         ? Center(
             child: Image.network(
               'https://www.pqstec.com/InvoiceApps/${customer.imagePath}',
-              fit: BoxFit.cover,
+              fit: BoxFit.fitHeight,
               errorBuilder: (context, error, stackTrace) {
                 return Center(
                   child: Icon(
                     Icons.image,
-                    size: 15.0.h,
+                    size: 10.h,
                   ),
                 );
               },
@@ -75,7 +76,7 @@ class GridViewTile extends StatelessWidget {
         : Center(
             child: Icon(
               Icons.image,
-              size: 12.0.h,
+              size: 10.h,
             ),
           );
   }
