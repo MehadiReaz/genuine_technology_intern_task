@@ -6,39 +6,39 @@ This Flutter application has been developed as part of the job task for Genuine 
 
 ## Folder Structure
 
-lib
-├── application
-│   ├── app.dart
-│   └── binders
-│       └── state_bindings.dart
-├── data
-│   ├── models
-│   │   ├── customer.dart
-│   │   ├── customer_list_response.dart
-│   │   ├── page_info.dart
-│   │   └── user_profile.dart
-│   ├── services
-│   └── utility
-│       └── urls.dart
-├── main.dart
-└── presentation
-    ├── ui
-    │   ├── controllers
-    │   │   ├── auth_controller.dart
-    │   │   ├── customer_controller.dart
-    │   │   └── login_controller.dart
-    │   ├── screens
-    │   │   ├── auth
-    │   │   │   ├── login_screen.dart
-    │   │   │   └── profile_screen.dart
-    │   │   ├── customer_details_screen.dart
-    │   │   ├── homescreen.dart
-    │   │   └── splash_screen.dart
-    │   └── widgets
-    │       ├── grid_view_tile.dart
-    │       └── list_view_tile.dart
-    └── utils
-        └── app_colors.dart
+        lib
+        ├── application
+        │   ├── app.dart
+        │   └── binders
+        │       └── state_bindings.dart
+        ├── data
+        │   ├── models
+        │   │   ├── customer.dart
+        │   │   ├── customer_list_response.dart
+        │   │   ├── page_info.dart
+        │   │   └── user_profile.dart
+        │   ├── services
+        │   └── utility
+        │       └── urls.dart
+        ├── main.dart
+        └── presentation
+            ├── ui
+            │   ├── controllers
+            │   │   ├── auth_controller.dart
+            │   │   ├── customer_controller.dart
+            │   │   └── login_controller.dart
+            │   ├── screens
+            │   │   ├── auth
+            │   │   │   ├── login_screen.dart
+            │   │   │   └── profile_screen.dart
+            │   │   ├── customer_details_screen.dart
+            │   │   ├── homescreen.dart
+            │   │   └── splash_screen.dart
+            │   └── widgets
+            │       ├── grid_view_tile.dart
+            │       └── list_view_tile.dart
+            └── utils
+                └── app_colors.dart
 
 ## Dependencies
 
