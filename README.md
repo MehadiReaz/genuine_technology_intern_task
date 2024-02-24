@@ -4,6 +4,11 @@
 
 This Flutter application has been developed as part of the job task for Genuine Technology. The application focuses on handling user authorization, displaying a paginated customer list with detailed information, images, and maintaining a user-friendly UI. The state management tool used in this app is GetX.
 
+## Download the app(APK)
+ DOWNLOAD
+ [Download](https://drive.google.com/file/d/1RfRCj4jWerhws1TZmfkzndL761V53GJn/view?usp=sharing)
+
+
 ## Folder Structure
 
         lib
@@ -55,25 +60,23 @@ sizer: ^2.0.15
 
 ## Screenshots
 
-### HomeScreen
+### Login Screen
 
-![HomeScreen](path_to_your_image1.png)
+![Login Screen](https://github.com/MehadiReaz/genuine_technology_intern_task/assets/65062761/f5bf4862-457a-4944-b742-9ca44afd3baf)
 _Description of the HomeScreen_
 
-### CustomerDetailsScreen
+### HomeScreen
 
-![CustomerDetailsScreen](path_to_your_image2.png)
-_Description of the CustomerDetailsScreen_
+![HomeScreen](https://github.com/MehadiReaz/genuine_technology_intern_task/assets/65062761/4b4b60ca-afe2-4640-8ff6-419fe2999eea)(https://github.com/MehadiReaz/genuine_technology_intern_task/assets/65062761/e3a9e724-ee27-400d-9211-cd64e311df11)
 
-### LoginController
+### Customar details Screen
 
-![LoginController](path_to_your_image3.png)
-_Description of the LoginController_
+![CustomerDetailsScreen]
+(https://github.com/MehadiReaz/genuine_technology_intern_task/assets/65062761/1a5b1e4b-03bb-4a68-85c7-285691cf5da6)
 
-### CustomerController
+### Profile Screen
+![Profile Screen](https://github.com/MehadiReaz/genuine_technology_intern_task/assets/65062761/ad977f0a-811e-4e10-89e1-858aeb271c21)
 
-![CustomerController](path_to_your_image4.png)
-_Description of the CustomerController_
 
 ## Requirements Fulfillment
 
