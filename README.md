@@ -4,41 +4,46 @@
 
 This Flutter application has been developed as part of the job task for Genuine Technology. The application focuses on handling user authorization, displaying a paginated customer list with detailed information, images, and maintaining a user-friendly UI. The state management tool used in this app is GetX.
 
+## Download the app(APK)
+
+ [Download](https://drive.google.com/file/d/1RfRCj4jWerhws1TZmfkzndL761V53GJn/view?usp=sharing)
+
+
 ## Folder Structure
 
-lib
-├── application
-│   ├── app.dart
-│   └── binders
-│       └── state_bindings.dart
-├── data
-│   ├── models
-│   │   ├── customer.dart
-│   │   ├── customer_list_response.dart
-│   │   ├── page_info.dart
-│   │   └── user_profile.dart
-│   ├── services
-│   └── utility
-│       └── urls.dart
-├── main.dart
-└── presentation
-    ├── ui
-    │   ├── controllers
-    │   │   ├── auth_controller.dart
-    │   │   ├── customer_controller.dart
-    │   │   └── login_controller.dart
-    │   ├── screens
-    │   │   ├── auth
-    │   │   │   ├── login_screen.dart
-    │   │   │   └── profile_screen.dart
-    │   │   ├── customer_details_screen.dart
-    │   │   ├── homescreen.dart
-    │   │   └── splash_screen.dart
-    │   └── widgets
-    │       ├── grid_view_tile.dart
-    │       └── list_view_tile.dart
-    └── utils
-        └── app_colors.dart
+        lib
+        ├── application
+        │   ├── app.dart
+        │   └── binders
+        │       └── state_bindings.dart
+        ├── data
+        │   ├── models
+        │   │   ├── customer.dart
+        │   │   ├── customer_list_response.dart
+        │   │   ├── page_info.dart
+        │   │   └── user_profile.dart
+        │   ├── services
+        │   └── utility
+        │       └── urls.dart
+        ├── main.dart
+        └── presentation
+            ├── ui
+            │   ├── controllers
+            │   │   ├── auth_controller.dart
+            │   │   ├── customer_controller.dart
+            │   │   └── login_controller.dart
+            │   ├── screens
+            │   │   ├── auth
+            │   │   │   ├── login_screen.dart
+            │   │   │   └── profile_screen.dart
+            │   │   ├── customer_details_screen.dart
+            │   │   ├── homescreen.dart
+            │   │   └── splash_screen.dart
+            │   └── widgets
+            │       ├── grid_view_tile.dart
+            │       └── list_view_tile.dart
+            └── utils
+                └── app_colors.dart
 
 ## Dependencies
 
@@ -55,25 +60,31 @@ sizer: ^2.0.15
 
 ## Screenshots
 
+### Login Screen
+
+![Login Screen](https://github.com/MehadiReaz/genuine_technology_intern_task/assets/65062761/f5bf4862-457a-4944-b742-9ca44afd3baf)
+_Login Screen_
+
 ### HomeScreen
 
-![HomeScreen](path_to_your_image1.png)
-_Description of the HomeScreen_
+<div style="display: flex; flex-direction: row;">
+  <img src="https://github.com/MehadiReaz/genuine_technology_intern_task/assets/65062761/4b4b60ca-afe2-4640-8ff6-419fe2999eea" alt="HomeScreen" width="200" />
+  <img src="https://github.com/MehadiReaz/genuine_technology_intern_task/assets/65062761/e3a9e724-ee27-400d-9211-cd64e311df11" alt="HomeScreen" width="200" />
+</div>
 
-### CustomerDetailsScreen
+_HomeScreen_
 
-![CustomerDetailsScreen](path_to_your_image2.png)
-_Description of the CustomerDetailsScreen_
+### Customer details Screen
 
-### LoginController
+![CustomerDetailsScreen](https://github.com/MehadiReaz/genuine_technology_intern_task/assets/65062761/1a5b1e4b-03bb-4a68-85c7-285691cf5da6)
+_CustomerDetailsScreen_
 
-![LoginController](path_to_your_image3.png)
-_Description of the LoginController_
+### Profile Screen
 
-### CustomerController
+![Profile Screen](https://github.com/MehadiReaz/genuine_technology_intern_task/assets/65062761/ad977f0a-811e-4e10-89e1-858aeb271c21)
+_Profile Screen_
 
-![CustomerController](path_to_your_image4.png)
-_Description of the CustomerController_
+
 
 ## Requirements Fulfillment
 
