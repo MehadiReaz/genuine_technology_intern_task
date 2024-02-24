@@ -5,7 +5,7 @@
 This Flutter application has been developed as part of the job task for Genuine Technology. The application focuses on handling user authorization, displaying a paginated customer list with detailed information, images, and maintaining a user-friendly UI. The state management tool used in this app is GetX.
 
 ## Download the app(APK)
- DOWNLOAD
+
  [Download](https://drive.google.com/file/d/1RfRCj4jWerhws1TZmfkzndL761V53GJn/view?usp=sharing)
 
 
@@ -63,16 +63,16 @@ sizer: ^2.0.15
 ### Login Screen
 
 ![Login Screen](https://github.com/MehadiReaz/genuine_technology_intern_task/assets/65062761/f5bf4862-457a-4944-b742-9ca44afd3baf)
-_Description of the HomeScreen_
 
 ### HomeScreen
 
-![HomeScreen](https://github.com/MehadiReaz/genuine_technology_intern_task/assets/65062761/4b4b60ca-afe2-4640-8ff6-419fe2999eea)(https://github.com/MehadiReaz/genuine_technology_intern_task/assets/65062761/e3a9e724-ee27-400d-9211-cd64e311df11)
+![HomeScreen](https://github.com/MehadiReaz/genuine_technology_intern_task/assets/65062761/4b4b60ca-afe2-4640-8ff6-419fe2999eea)
+
+![HomeScreen](https://github.com/MehadiReaz/genuine_technology_intern_task/assets/65062761/e3a9e724-ee27-400d-9211-cd64e311df11)
 
 ### Customar details Screen
 
-![CustomerDetailsScreen]
-(https://github.com/MehadiReaz/genuine_technology_intern_task/assets/65062761/1a5b1e4b-03bb-4a68-85c7-285691cf5da6)
+![CustomerDetailsScreen](https://github.com/MehadiReaz/genuine_technology_intern_task/assets/65062761/1a5b1e4b-03bb-4a68-85c7-285691cf5da6)
 
 ### Profile Screen
 ![Profile Screen](https://github.com/MehadiReaz/genuine_technology_intern_task/assets/65062761/ad977f0a-811e-4e10-89e1-858aeb271c21)
