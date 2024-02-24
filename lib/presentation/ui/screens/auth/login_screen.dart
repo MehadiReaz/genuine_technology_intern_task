@@ -4,10 +4,8 @@ import 'package:get/get.dart';
 import '../../controllers/login_controller.dart';
 
 class LoginScreen extends StatelessWidget {
-  final TextEditingController emailController =
-      TextEditingController(text: 'admin@gmail.com');
-  final TextEditingController passwordController =
-      TextEditingController(text: 'admin1234');
+  final TextEditingController emailController = TextEditingController();
+  final TextEditingController passwordController = TextEditingController();
   final LoginController loginController = Get.put(LoginController());
 
   LoginScreen({super.key});
